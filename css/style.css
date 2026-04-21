@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-emerald: #006B3E;
+    --dark-emerald-light: #008B4A;
+    --black: #0A0A0A;
+    --black-light: #111111;
+    --black-card: #0D0D0D;
+    --gray: #777777;
+    --gray-light: #999999;
+    --white-dim: #E0E0E0;
+}
+
+body {
+    font-family: 'Inter', monospace;
+    background: var(--black);
+    color: var(--white-dim);
+    line-height: 1.6;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 107, 62, 0.3);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo a {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: var(--dark-emerald-light);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--white-dim);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-family: monospace;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--dark-emerald-light);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: var(--dark-emerald-light);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.greeting {
+    font-family: monospace;
+    color: var(--dark-emerald-light);
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.dark-emerald {
+    color: var(--dark-emerald-light);
+    border-right: 2px solid var(--dark-emerald-light);
+    padding-right: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.description {
+    color: var(--gray);
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    font-family: monospace;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: var(--dark-emerald);
+    color: var(--white-dim);
+    padding: 10px 24px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: 1px solid var(--dark-emerald);
+}
+
+.btn-primary:hover {
+    background: var(--dark-emerald-light);
+    border-color: var(--dark-emerald-light);
+}
+
+.btn-outline {
+    border: 1px solid var(--dark-emerald);
+    color: var(--dark-emerald);
+    padding: 10px 24px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: var(--dark-emerald);
+    color: var(--white-dim);
+}
+
+/* ===== SECTION HEADERS (ONLY THESE ARE CHANGED) ===== */
+/* about(), academies.completed(), skills.current(), education.history(), contact() */
+.about h2,
+.academies h2,
+.skills h2,
+.education h2,
+.contact h2 {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: var(--dark-emerald-light);
+    text-decoration: none;
+    font-weight: normal;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+/* ===== ABOUT SECTION (CONTENT UNCHANGED) ===== */
+.about {
+    padding: 5rem 0;
+    border-top: 1px solid rgba(0, 74, 43, 0.2);
+    border-bottom: 1px solid rgba(0, 107, 62, 0.2);
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--gray-light);
+}
+
+.terminal {
+    background: var(--black-light);
+    border-left: 3px solid var(--dark-emerald);
+    padding: 1.2rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.7rem;
+    margin: 1.5rem 0;
+}
+
+.terminal p {
+    margin-bottom: 0.3rem;
+    color: var(--gray-light);
+}
+
+.prompt {
+    color: var(--dark-emerald-light);
+}
+
+/* ===== SUBSECTIONS (CONTENT UNCHANGED) ===== */
+.academies,
+.skills,
+.education,
+.contact {
+    padding: 5rem 0;
+}
+
+/* ===== ALL GRIDS ===== */
+.academies-grid,
+.skills-grid,
+.education-grid,
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ===== ALL CARDS (CONTENT UNCHANGED) ===== */
+.academy-card,
+.skill-card,
+.edu-card,
+.contact-card {
+    background: var(--black-card);
+    border: 1px solid rgba(0, 107, 62, 0.2);
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+.skill-card .devicon-cplusplus-line,
+.skill-card .devicon-cplusplus-plain {
+    color: #0ae20a !important;  /* Green icon */
+    filter: drop-shadow(1px 1px 0 #000) 
+            drop-shadow(-1px -1px 0 #000)
+            drop-shadow(1px -1px 0 #000)
+            drop-shadow(-1px 1px 0 #000) !important;
+}
+.academy-card:hover,
+.skill-card:hover,
+.edu-card:hover,
+.contact-card:hover {
+    border-color: var(--dark-emerald);
+    transform: translateY(-3px);
+}
+
+/* ===== ALL CARD TITLES (CONTENT UNCHANGED) ===== */
+.academy-card h3,
+.skill-card h3,
+.edu-card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white-dim);
+    margin-bottom: 0.5rem;
+}
+
+/* ===== ALL CARD PARAGRAPHS (CONTENT UNCHANGED) ===== */
+.academy-card p,
+.skill-card p,
+.edu-card p {
+    font-size: 0.75rem;
+    color: var(--gray);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* ===== ALL CARD ICONS (CONTENT UNCHANGED) ===== */
+.academy-card i,
+.skill-card i,
+.edu-card i,
+.contact-card i {
+    font-size: 1.8rem;
+    color: var(--dark-emerald-light);
+    margin-bottom: 0.8rem;
+}
+
+/* ===== ACADEMY TOPICS (CONTENT UNCHANGED) ===== */
+.academy-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.academy-topics span {
+    background: rgba(0, 107, 62, 0.15);
+    color: var(--dark-emerald-light);
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    font-family: monospace;
+}
+
+/* ===== CONTACT CARDS (CONTENT UNCHANGED) ===== */
+.contact-card p {
+    font-size: 0.7rem;
+    word-break: break-all;
+    margin-bottom: 0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(0, 107, 62, 0.2);
+    font-size: 0.65rem;
+    color: var(--gray);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 55px;
+        flex-direction: column;
+        background: var(--black);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(0, 107, 62, 0.2);
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .menu-btn {
+        display: block;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary, .btn-outline {
+        width: 160px;
+        text-align: center;
+    }
+    
+    .academies-grid,
+    .skills-grid,
+    .education-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
